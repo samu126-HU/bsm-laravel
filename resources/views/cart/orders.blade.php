@@ -34,7 +34,7 @@
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-start justify-content-start overflow-hidden">
                                                 <img src="{{ asset('media/book-covers/' . $books->find($item->book)->cover) }}" alt="" height="100px">
-                                                <span class="ms-2 fs-3">{{ $books->find($item->book)->title . ' x' . $item->quantity }} <br> {{ '#' . $item->order_id }}</span>
+                                                <span class="ms-2 fs-3">{{ $books->find($item->book)->title . ' x' . $item->quantity }} <br></span>
                                             </div>
                                             <div class="col-6 d-flex justify-content-end fs-5">
                                                 <span class="position-absolute">{{ $item->created_at }}</span>
