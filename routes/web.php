@@ -61,7 +61,7 @@ Route::get('/admin', function () {
 })->name('admin');
 
 
-Route::view("/admin", 'admin')->name('admin');
+Route::view("/admin", 'admin')->name('admin')->middleware('admin');
 
 Route::post('/admin/data/', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.data')->middleware('admin');
 Route::post('/admin/modify/', [App\Http\Controllers\AdminController::class, 'modify'])->name('admin.modify')->middleware('admin');
