@@ -52,15 +52,6 @@ Route::post('cart/delete', [CartController::class, 'deleteFromCart'])->name('car
 
 Route::post('/contact', [MessageController::class, 'contact'])->name('contact.store');
 
-Route::get('/admin', function () {
-    if (Gate::allows('isAdmin')) {
-        return view('admin', ['menuId' => 1]);
-    } else {
-        return abort(403, 'Nem nem, és nem.');
-    }
-})->name('admin');
-
-
 Route::view("/admin", 'admin')->name('admin')->middleware('admin');
 
 Route::post('/admin/data/', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.data')->middleware('admin');
